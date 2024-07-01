@@ -1,4 +1,8 @@
 package com.petland.petland_api.model.dto;
 
-public class AnimalResponse {
+import lombok.Data;
+
+@Data
+public class AnimalResponse extends AnimalRequest{
+    private Integer id;
 }
