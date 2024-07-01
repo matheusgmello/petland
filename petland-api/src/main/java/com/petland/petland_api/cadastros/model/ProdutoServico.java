@@ -1,9 +1,6 @@
-package com.petland.petland_api.model.entity;
+package com.petland.petland_api.cadastros.model;
 
-import com.petland.petland_api.model.Endereco;
-import com.petland.petland_api.model.Perfil;
 import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,22 +11,18 @@ import lombok.Data;
 import lombok.Setter;
 
 @Entity
-@Table(name = "tab_cadastro")
+@Table(name = "tab_produto_servico")
 @Data
-public class CadastroEntity {
-
+public class ProdutoServico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Setter(AccessLevel.NONE)
+    //@Setter(AccessLevel.NONE)
     private Integer id;
 
     @Column(length = 50, nullable = false)
     private String nome;
 
-    @Embedded
-    private Perfil perfil;
+    private Double valor;
 
-    @Embedded
-    private Endereco endereco;
-
+    private Boolean servico;
 }

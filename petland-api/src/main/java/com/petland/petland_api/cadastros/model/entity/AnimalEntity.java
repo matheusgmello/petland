@@ -1,7 +1,12 @@
-package com.petland.petland_api.model;
+package com.petland.petland_api.cadastros.model.entity;
 
+import java.time.LocalDate;
+
+import com.petland.petland_api.cadastros.model.AnimalEspecie;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -11,18 +16,21 @@ import lombok.Data;
 import lombok.Setter;
 
 @Entity
-@Table(name = "tab_produto_servico")
+@Table(name= "tab_animal")
 @Data
-public class ProdutoServico {
+public class AnimalEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //@Setter(AccessLevel.NONE)
+    @Setter(AccessLevel.NONE)
     private Integer id;
 
     @Column(length = 50, nullable = false)
     private String nome;
 
-    private Double valor;
+    private LocalDate aniversário;
 
-    private Boolean servico;
+    @Enumerated(EnumType.STRING)
+    private AnimalEspecie especie;
+
 }

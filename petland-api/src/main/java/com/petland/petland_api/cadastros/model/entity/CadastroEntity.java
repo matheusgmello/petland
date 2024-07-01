@@ -1,12 +1,10 @@
-package com.petland.petland_api.model.entity;
+package com.petland.petland_api.cadastros.model.entity;
 
-import java.time.LocalDate;
-
-import com.petland.petland_api.model.AnimalEspecie;
+import com.petland.petland_api.cadastros.model.Perfil;
+import com.petland.petland_api.cadastros.model.Endereco;
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,9 +14,9 @@ import lombok.Data;
 import lombok.Setter;
 
 @Entity
-@Table(name= "tab_animal")
+@Table(name = "tab_cadastro")
 @Data
-public class AnimalEntity {
+public class CadastroEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,9 +26,10 @@ public class AnimalEntity {
     @Column(length = 50, nullable = false)
     private String nome;
 
-    private LocalDate aniversário;
+    @Embedded
+    private Perfil perfil;
 
-    @Enumerated(EnumType.STRING)
-    private AnimalEspecie especie;
+    @Embedded
+    private Endereco endereco;
 
 }
