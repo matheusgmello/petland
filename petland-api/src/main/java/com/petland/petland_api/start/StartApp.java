@@ -1,15 +1,11 @@
 package com.petland.petland_api.start;
 
-import com.petland.petland_api.model.Animal;
-import com.petland.petland_api.model.AnimalEspecie;
 import com.petland.petland_api.repository.AnimalRepository;
 import com.petland.petland_api.repository.CadastroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
-
-import java.time.LocalDate;
 
 
 @Component
