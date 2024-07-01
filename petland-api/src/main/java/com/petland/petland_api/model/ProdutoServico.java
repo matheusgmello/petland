@@ -16,7 +16,7 @@ import lombok.Setter;
 public class ProdutoServico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Setter(AccessLevel.NONE)
+    //@Setter(AccessLevel.NONE)
     private Integer id;
 
     @Column(length = 50, nullable = false)
