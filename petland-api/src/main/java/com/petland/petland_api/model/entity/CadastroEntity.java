@@ -1,5 +1,7 @@
-package com.petland.petland_api.model;
+package com.petland.petland_api.model.entity;
 
+import com.petland.petland_api.model.Endereco;
+import com.petland.petland_api.model.Perfil;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -14,7 +16,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "tab_cadastro")
 @Data
-public class Cadastro {
+public class CadastroEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
